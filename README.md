@@ -6,6 +6,7 @@ também são enviados ao Firebase Firestore (NoSQL).
 
 ## Como usar (fluxo da urna)
 
+- Rode ".\run-local.ps1" no terminal.
 - **Iniciar**: digite `99999` e aperte **CONFIRMA**. Aparece o relatório inicial, com todos os votos zerados.
 - **Votar**: digite os 5 dígitos do candidato; as informações (foto, número, nome, partido) aparecem.
   Aperte **CONFIRMA** para votar. Cada eleitor vota em Vereador e depois em Prefeito.

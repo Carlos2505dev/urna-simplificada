@@ -1,7 +1,4 @@
-/*
- * Arquivo: Main.java
- * Ponto de entrada da Urna Eletrônica Simplificada.
- */
+
 package br.edu.urna;
 
 import br.edu.urna.controller.VotingController;
