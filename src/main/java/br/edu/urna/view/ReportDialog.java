@@ -40,6 +40,9 @@ public final class ReportDialog {
             text.append(report.getOffice().getDescription().toUpperCase()).append(System.lineSeparator());
             for (Candidate candidate : report.getCandidates()) {
                 String label = candidate.getName() + " (" + candidate.getNumber() + ")";
+                if (candidate.getViceName() != null) {
+                    label += " - Vice: " + candidate.getViceName();
+                }
                 appendLine(text, label, report, candidate.getNumber());
             }
             appendLine(text, "Votos em branco", report, VotingConstants.BLANK_CHOICE);

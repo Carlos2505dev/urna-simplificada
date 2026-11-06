@@ -14,13 +14,20 @@ public class Candidate {
     private final String partyAcronym;
     private final Office office;
     private final String photoFileName;
+    private final String viceName;
 
     public Candidate(String number, String name, String partyAcronym, Office office, String photoFileName) {
+        this(number, name, partyAcronym, office, photoFileName, null);
+    }
+
+    public Candidate(String number, String name, String partyAcronym, Office office,
+            String photoFileName, String viceName) {
         this.number = number;
         this.name = name;
         this.partyAcronym = partyAcronym;
         this.office = office;
         this.photoFileName = photoFileName;
+        this.viceName = viceName;
     }
 
     public String getNumber() {
@@ -41,5 +48,9 @@ public class Candidate {
 
     public String getPhotoFileName() {
         return photoFileName;
+    }
+
+    public String getViceName() {
+        return viceName;
     }
 }

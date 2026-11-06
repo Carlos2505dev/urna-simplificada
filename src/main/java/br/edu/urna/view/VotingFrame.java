@@ -103,7 +103,11 @@ public class VotingFrame extends JFrame implements VotingScreen {
         showCandidateCard();
         updateNumberCells(candidate.getNumber());
         candidateNameLabel.setText(wrapText(candidate.getName(), 350));
-        candidatePartyLabel.setText("Partido: " + candidate.getPartyAcronym());
+        String candidateDetails = "Partido: " + candidate.getPartyAcronym();
+        if (candidate.getViceName() != null) {
+            candidateDetails += " | Vice-prefeito: " + candidate.getViceName();
+        }
+        candidatePartyLabel.setText(wrapText(candidateDetails, 350));
         setPhoto(loadPhoto(candidate.getPhotoFileName()));
     }
 

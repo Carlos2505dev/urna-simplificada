@@ -30,6 +30,7 @@ public class FirestoreCandidateRepository implements CandidateRepository {
     private static final String PARTY_FIELD = "sigla";
     private static final String OFFICE_FIELD = "cargo";
     private static final String PHOTO_FIELD = "foto";
+    private static final String VICE_FIELD = "vice";
 
     private final Firestore firestore;
 
@@ -74,6 +75,9 @@ public class FirestoreCandidateRepository implements CandidateRepository {
             data.put(PARTY_FIELD, candidate.getPartyAcronym());
             data.put(OFFICE_FIELD, candidate.getOffice().name());
             data.put(PHOTO_FIELD, candidate.getPhotoFileName());
+            if (candidate.getViceName() != null) {
+                data.put(VICE_FIELD, candidate.getViceName());
+            }
             waitForResult(candidatesCollection().add(data));
         }
     }
@@ -88,6 +92,7 @@ public class FirestoreCandidateRepository implements CandidateRepository {
                 document.getString(NAME_FIELD),
                 document.getString(PARTY_FIELD),
                 Office.valueOf(document.getString(OFFICE_FIELD)),
-                document.getString(PHOTO_FIELD));
+                document.getString(PHOTO_FIELD),
+                document.getString(VICE_FIELD));
     }
 }
