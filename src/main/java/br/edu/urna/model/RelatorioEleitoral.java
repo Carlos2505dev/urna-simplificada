@@ -1,5 +1,5 @@
 /*
- * Arquivo: ElectionReport.java
+ * Arquivo: RelatorioEleitoral.java
  * Relatório de votação de um cargo.
  */
 package br.edu.urna.model;

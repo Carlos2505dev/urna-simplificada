@@ -1,6 +1,6 @@
 /*
- * Arquivo: FirestoreCandidateRepository.java
- * Implementacao de CandidateRepository com Firestore.
+ * Arquivo: RepositorioFirestoreCandidatos.java
+ * Implementação de RepositorioCandidatos usando o Firestore.
  */
 package br.edu.urna.repository.firebase;
 
@@ -29,7 +29,7 @@ public class RepositorioFirestoreCandidatos implements RepositorioCandidatos {
 
     private static final String CAMPO_NUMERO = "numero";
     private static final String CAMPO_NOME = "nome";
-    private static final String CAMPO_PARTIDO = "sigla";
+    private static final String CAMPO_PARTIDO = "partido";
     private static final String CAMPO_CARGO = "cargo";
     private static final String CAMPO_FOTO = "foto";
     private static final String CAMPO_VICE = "vice";

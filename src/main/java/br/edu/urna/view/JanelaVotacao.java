@@ -1,6 +1,6 @@
 /*
  * Arquivo: JanelaVotacao.java
- * Janela principal da urna: tela de votacao, teclado numerico e teclas BRANCO, CORRIGE e CONFIRMA.
+ * Janela principal da urna: tela de votação, teclado numérico e teclas BRANCO, CORRIGE e CONFIRMA.
  */
 package br.edu.urna.view;
 
@@ -45,7 +45,7 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.border.LineBorder;
 
 /**
- * Tela da urna. Nao contem regras: repassa os cliques ao controlador e exibe o que ele pede.
+ * Tela da urna. Não contém regras de negócio: repassa os cliques ao controlador e exibe o que ele solicita.
  */
 public class JanelaVotacao extends JFrame implements TelaVotacao {
 
@@ -220,8 +220,8 @@ public class JanelaVotacao extends JFrame implements TelaVotacao {
     }
 
     /**
-     * Mostra a tela FIM e, depois de alguns segundos, volta automaticamente para a tela de votacao
-     * do proximo eleitor.
+    * Mostra a tela FIM e, após três segundos, volta automaticamente para a tela de votação
+    * do próximo eleitor.
      */
     @Override
     public void mostrarFim() {
@@ -282,10 +282,10 @@ public class JanelaVotacao extends JFrame implements TelaVotacao {
     }
 
     /**
-     * Posiciona todos os elementos conforme o estado atual.
-     * As caixas de numero ficam sempre visiveis. O nome do cargo aparece durante a digitacao do
-     * eleitor, mas nao quando o mesario digita a senha. "SEU VOTO PARA" e os dados aparecem somente
-     * quando ha informacoes completas.
+    * Posiciona os elementos conforme o estado atual.
+    * As caixas de número são exibidas enquanto não há um resultado. O cargo é ocultado enquanto
+    * o número digitado corresponde a um prefixo da senha. Os dados do candidato aparecem quando
+    * uma escolha válida foi localizada.
      */
     private void renderizar() {
         boolean informacoes = !fimVisivel && (numeroCompleto || resultadoTexto != null);
@@ -348,7 +348,7 @@ public class JanelaVotacao extends JFrame implements TelaVotacao {
     }
 
     /**
-     * Indica se o texto digitado ainda pode ser o inicio da senha do mesario (ex.: "9", "99", "9999").
+    * Indica se o texto digitado é um prefixo da senha do mesário, incluindo a senha completa.
      */
     private boolean ehPrefixoDaSenha(String numero) {
         return !numero.isEmpty() && SENHA_MESARIO.startsWith(numero);
@@ -547,7 +547,8 @@ public class JanelaVotacao extends JFrame implements TelaVotacao {
     }
 
     /**
-     * Painel que desenha a foto encostada no canto superior direito, na resolucao da tela.
+    * Painel que exibe a foto do candidato alinhada à direita e, quando disponível, a foto do
+    * vice-prefeito abaixo dela.
      */
     private static final class PhotoPanel extends JPanel {
 

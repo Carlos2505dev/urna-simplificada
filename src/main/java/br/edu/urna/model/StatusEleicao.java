@@ -1,5 +1,5 @@
 /*
- * Arquivo: ElectionStatus.java
+ * Arquivo: StatusEleicao.java
  * Situação da votação.
  */
 package br.edu.urna.model;

@@ -1,6 +1,6 @@
 /*
- * Arquivo: FirestoreVoteRepository.java
- * Implementacao de VoteRepository com Firestore.
+ * Arquivo: RepositorioFirestoreVotos.java
+ * Implementação de RepositorioVotos usando o Firestore.
  */
 package br.edu.urna.repository.firebase;
 
@@ -20,7 +20,7 @@ import java.util.Map;
  */
 public class RepositorioFirestoreVotos implements RepositorioVotos {
 
-    private static final String CAMPO_ELEICAO = "eleicao";
+    private static final String CAMPO_ELEITOR = "eleitor";
     private static final String CAMPO_CARGO = "cargo";
     private static final String CAMPO_ESCOLHA = "escolha";
 
@@ -33,7 +33,7 @@ public class RepositorioFirestoreVotos implements RepositorioVotos {
     @Override
     public void registrarVoto(String identificadorEleicao, Cargo cargo, String escolha) {
         Map<String, Object> voto = new HashMap<>();
-        voto.put(CAMPO_ELEICAO, identificadorEleicao);
+        voto.put(CAMPO_ELEITOR, identificadorEleicao);
         voto.put(CAMPO_CARGO, cargo.name());
         voto.put(CAMPO_ESCOLHA, escolha);
         aguardarResultado(firestore.collection(ConstantesVotacao.COLECAO_VOTOS).add(voto));
@@ -42,7 +42,7 @@ public class RepositorioFirestoreVotos implements RepositorioVotos {
     @Override
     public Map<String, Integer> contarVotos(String identificadorEleicao, Cargo cargo) {
         QuerySnapshot snapshot = aguardarResultado(firestore.collection(ConstantesVotacao.COLECAO_VOTOS)
-                .whereEqualTo(CAMPO_ELEICAO, identificadorEleicao)
+                .whereEqualTo(CAMPO_ELEITOR, identificadorEleicao)
                 .whereEqualTo(CAMPO_CARGO, cargo.name())
                 .get());
         Map<String, Integer> contagens = new HashMap<>();

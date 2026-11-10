@@ -1,5 +1,5 @@
 /*
- * Arquivo: VotingController.java
+ * Arquivo: ControladorVotacao.java
  * Fluxo de votação: trata as teclas da urna e atualiza a tela.
  */
 package br.edu.urna.controller;

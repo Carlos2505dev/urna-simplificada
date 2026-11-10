@@ -1,5 +1,5 @@
 /*
- * Arquivo: FirebaseConnection.java
+ * Arquivo: ConexaoFirebase.java
  * Conexão única com o Firebase Firestore.
  */
 package br.edu.urna.repository.firebase;

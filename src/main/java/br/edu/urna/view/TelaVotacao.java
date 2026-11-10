@@ -1,6 +1,6 @@
 /*
- * Arquivo: VotingScreen.java
- * Contrato da tela da urna, usado pelo controller.
+ * Arquivo: TelaVotacao.java
+ * Contrato da tela da urna, usado pelo controlador.
  */
 package br.edu.urna.view;
 
@@ -10,7 +10,7 @@ import br.edu.urna.model.RelatorioEleitoral;
 import java.util.List;
 
 /**
- * Operacoes de exibicao que o controller pode solicitar.
+ * Operações de exibição que o controlador pode solicitar.
  */
 public interface TelaVotacao {
 

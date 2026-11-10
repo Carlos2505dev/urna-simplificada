@@ -1,12 +1,11 @@
 /*
- * Arquivo: Office.java
+ * Arquivo: Cargo.java
  * Cargos disputados na eleição.
  */
 package br.edu.urna.model;
 
 /**
- * Cargos em disputa. Cada eleitor vota em todos os cargos, sem segundo turno.
- * Para trocar a dupla (ex.: Governador e Presidente), altere os valores abaixo.
+ * Cargos em disputa. Cada eleitor vota em todos os cargos configurados, sem segundo turno.
  */
 public enum Cargo {
 

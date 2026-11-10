@@ -1,5 +1,5 @@
 /*
- * Arquivo: VotingService.java
+ * Arquivo: ServicoVotacao.java
  * Regras de negócio da eleição.
  */
 package br.edu.urna.service;

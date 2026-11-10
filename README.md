@@ -4,9 +4,11 @@ Simulador de urna eletrônica em Java (Swing), organizado em MVC (model / view /
 com camada de serviço e repositórios. Os votos são salvos localmente e, quando configurado,
 também são enviados ao Firebase Firestore (NoSQL).
 
+Autores: Caio Ricardo, Carlos Bezerra, David Souza, Davi Hiel e Marcos Antônio.
+
 ## Como usar (fluxo da urna)
 
-- Rode ".\run-local.ps1" no terminal.
+- Rode localmente ".\run-local.ps1" ou execute o comando da versão completa abaixo no terminal.
 - **Iniciar**: digite `99999` e aperte **CONFIRMA**. Aparece o relatório inicial, com todos os votos zerados.
 - **Votar**: digite 5 dígitos para vereador ou 2 dígitos para prefeito; as informações (foto, número, nome, partido) aparecem.
   Aperte **CONFIRMA** para votar. Cada eleitor vota em Vereador e depois em Prefeito.
@@ -32,5 +34,28 @@ também são enviados ao Firebase Firestore (NoSQL).
 ## Validação
 
 O comando `.\run-local.ps1` compila e executa a versão local sem depender das credenciais
-do Firebase. Para a versão completa, use `mvn clean package` em um ambiente com Maven
-instalado; a dependência do Firebase está declarada no `pom.xml`.
+do Firebase.
+
+### Instalar o Maven
+
+No PowerShell, execute:
+
+```powershell
+$version = '3.9.16'; $base = Join-Path $env:USERPROFILE 'tools'; $archive = Join-Path $env:TEMP "apache-maven-$version-bin.zip"; $install = Join-Path $base "apache-maven-$version"; $url = "https://dlcdn.apache.org/maven/maven-3/$version/binaries/apache-maven-$version-bin.zip"; New-Item -ItemType Directory -Force -Path $base | Out-Null; Invoke-WebRequest -UseBasicParsing -Uri $url -OutFile $archive; Expand-Archive -Path $archive -DestinationPath $base -Force; $mavenBin = Join-Path $install 'bin'; [Environment]::SetEnvironmentVariable('MAVEN_HOME', $install, 'User'); $userPath = [Environment]::GetEnvironmentVariable('Path', 'User'); if (($userPath -split ';') -notcontains $mavenBin) { [Environment]::SetEnvironmentVariable('Path', (($userPath.TrimEnd(';') + ';' + $mavenBin).Trim(';')), 'User') }; & (Join-Path $mavenBin 'mvn.cmd') -version
+```
+
+### Executar a versão completa
+
+Na raiz do projeto, execute o comando abaixo. Ele atualiza o `PATH` da sessão atual e
+compila e inicia a versão completa com Maven e Swing:
+
+```powershell
+$env:FIREBASE_KEY_PATH = (Join-Path (Get-Location) 'firebase-key.json')
+
+$mavenBin = Join-Path $env:USERPROFILE 'tools\apache-maven-3.9.16\bin'
+$env:Path = "$mavenBin;$env:Path"
+
+mvn clean package
+mvn exec:java "-Dexec.mainClass=br.edu.urna.Principal" "-Dexec.classpathScope=runtime"
+```
+

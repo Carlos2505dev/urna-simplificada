@@ -1,5 +1,5 @@
 /*
- * Arquivo: VotingConstants.java
+ * Arquivo: ConstantesVotacao.java
  * Constantes globais da urna.
  */
 package br.edu.urna.util;

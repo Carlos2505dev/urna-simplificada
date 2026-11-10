@@ -1,5 +1,5 @@
 /*
- * Arquivo: ReportDialog.java
+ * Arquivo: DialogoRelatorio.java
  * Janela com o relatório da eleição, separado por cargo.
  */
 package br.edu.urna.view;

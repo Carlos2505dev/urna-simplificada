@@ -53,7 +53,7 @@ public class Principal {
                 JanelaVotacao janela = new JanelaVotacao(controlador);
                 controlador.definirTela(janela);
                 janela.setVisible(true);
-            } catch (IOException | RuntimeException exception) {
+            } catch (RuntimeException exception) {
                 JOptionPane.showMessageDialog(null,
                         "Não foi possível iniciar a urna: " + exception.getMessage(),
                         "Erro", JOptionPane.ERROR_MESSAGE);

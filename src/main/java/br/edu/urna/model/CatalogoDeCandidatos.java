@@ -1,6 +1,6 @@
 /*
- * Arquivo: CandidateCatalog.java
- * Candidatos iniciais, baseados no simulador do TSE.
+ * Arquivo: CatalogoDeCandidatos.java
+ * Candidatos padrão usados pela aplicação.
  */
 package br.edu.urna.model;
 
@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Gera os candidatos padrão gravados no Firestore na primeira execução.
+ * Gera os candidatos padrão usados pela aplicação.
  * Os candidatos a prefeito têm cadastro próprio.
  */
 public final class CatalogoDeCandidatos {

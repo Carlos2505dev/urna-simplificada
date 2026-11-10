@@ -1,11 +1,11 @@
 /*
- * Arquivo: RepositoryException.java
- * Erro de acesso ao banco de dados.
+ * Arquivo: ExcecaoRepositorio.java
+ * Erro ocorrido durante o acesso ou a persistência de dados.
  */
 package br.edu.urna.repository;
 
 /**
- * Erro lançado quando uma operação no banco falha.
+ * Erro lançado quando uma operação de acesso ou persistência falha.
  */
 public class ExcecaoRepositorio extends RuntimeException {
 

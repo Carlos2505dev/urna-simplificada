@@ -1,5 +1,5 @@
 /*
- * Arquivo: VoteRepository.java
+ * Arquivo: RepositorioVotos.java
  * Contrato de acesso aos votos.
  */
 package br.edu.urna.repository;
@@ -8,7 +8,7 @@ import br.edu.urna.model.Cargo;
 import java.util.Map;
 
 /**
- * Operacoes de persistencia dos votos.
+ * Operações de persistência dos votos.
  */
 public interface RepositorioVotos {
 

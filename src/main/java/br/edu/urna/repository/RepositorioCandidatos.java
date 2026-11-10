@@ -1,5 +1,5 @@
 /*
- * Arquivo: CandidateRepository.java
+ * Arquivo: RepositorioCandidatos.java
  * Contrato de acesso aos candidatos.
  */
 package br.edu.urna.repository;
@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Optional;
 
 /**
- * Operacoes de persistencia dos candidatos.
+ * Operações de persistência dos candidatos.
  */
 public interface RepositorioCandidatos {
 
