@@ -5,7 +5,7 @@ $classesPath = Join-Path $projectRoot 'target\local-classes'
 
 $sourceFiles = Get-ChildItem $sourceRoot -Recurse -Filter '*.java' |
     Where-Object {
-        $_.Name -ne 'Main.java' -and $_.FullName -notlike '*\repository\firebase\*'
+        $_.Name -ne 'Principal.java' -and $_.FullName -notlike '*\repository\firebase\*'
     } |
     ForEach-Object { $_.FullName }
 
@@ -17,7 +17,7 @@ try {
         throw "A compilação falhou com código $LASTEXITCODE."
     }
 
-    & java -cp $classesPath br.edu.urna.LocalMain
+    & java -cp $classesPath br.edu.urna.PrincipalLocal
     if ($LASTEXITCODE -ne 0) {
         throw "A urna terminou com código $LASTEXITCODE."
     }

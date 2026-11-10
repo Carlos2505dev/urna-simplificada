@@ -8,21 +8,29 @@ também são enviados ao Firebase Firestore (NoSQL).
 
 - Rode ".\run-local.ps1" no terminal.
 - **Iniciar**: digite `99999` e aperte **CONFIRMA**. Aparece o relatório inicial, com todos os votos zerados.
-- **Votar**: digite os 5 dígitos do candidato; as informações (foto, número, nome, partido) aparecem.
+- **Votar**: digite 5 dígitos para vereador ou 2 dígitos para prefeito; as informações (foto, número, nome, partido) aparecem.
   Aperte **CONFIRMA** para votar. Cada eleitor vota em Vereador e depois em Prefeito.
 - **Corrigir**: **CORRIGE** apaga os números digitados.
 - **Branco**: **BRANCO** registra voto em branco (confirme em seguida).
 - **Número inexistente**: a urna avisa que o voto será nulo se confirmado.
 - **Encerrar**: digite `99999` e aperte **CONFIRMA** (sem voto em andamento). Aparece o relatório final.
 
-## Estrutura Atual
+## Estrutura do projeto
 
     src/main/java/br/edu/urna
-      Main.java                         ponto de entrada
-      model/                            entidades e regras de dados (Candidate, Office, ElectionReport...)
-      util/VotingConstants.java         constantes (interface)
-      repository/                       contratos de acesso a dados (interfaces)
-      repository/firebase/              implementação com Firestore
-      service/VotingService.java        regras da eleição
-      controller/VotingController.java  fluxo de votação (teclado)
+      Principal.java                    ponto de entrada com Firebase
+      PrincipalLocal.java               ponto de entrada sem Firebase
+      model/                            entidades do domínio
+      util/ConstantesVotacao.java       constantes da aplicação
+      repository/                       contratos e exceções de persistência
+      repository/local/                 persistência local em arquivo TSV
+      repository/firebase/              persistência remota com Firestore
+      service/ServicoVotacao.java       regras da eleição
+      controller/ControladorVotacao.java fluxo de votação
       view/                             interface gráfica Swing
+
+## Validação
+
+O comando `.\run-local.ps1` compila e executa a versão local sem depender das credenciais
+do Firebase. Para a versão completa, use `mvn clean package` em um ambiente com Maven
+instalado; a dependência do Firebase está declarada no `pom.xml`.
