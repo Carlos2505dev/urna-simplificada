@@ -136,7 +136,7 @@ public class ControladorVotacao {
         } else {
             numeroInvalido = true;
             tela.mostrarNumeroInvalido(numeroDigitado);
-            tela.mostrarMensagem("Número errado. O voto será nulo se confirmado. Use CORRIGE para corrigir.");
+            tela.mostrarMensagem("Número errado. O voto será nulo se confirmado.\nAperte CORRIGE para corrigir.");
         }
     }
 

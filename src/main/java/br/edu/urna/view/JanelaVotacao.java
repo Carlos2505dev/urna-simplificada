@@ -307,7 +307,8 @@ public class JanelaVotacao extends JFrame implements TelaVotacao {
         cargoLabel.setBounds(MARGEM_ESQUERDA, Y_CARGO, 400, 36);
         cargoLabel.setVisible(cargo);
 
-        boolean caixas = !fimVisivel && resultadoTexto == null;
+        boolean caixas = !fimVisivel
+                && (resultadoTexto == null || "Número não encontrado".equals(resultadoTexto));
         int xCaixas = rotuloNumero ? colunaValores : MARGEM_ESQUERDA;
         for (int indice = 0; indice < celulasNumero.size(); indice++) {
             JLabel celula = celulasNumero.get(indice);
