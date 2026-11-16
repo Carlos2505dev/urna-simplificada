@@ -148,8 +148,8 @@ public class ControladorVotacao {
             tela.mostrarMensagem("Votação iniciada. Digite o número do candidato.");
         } else {
             servicoVotacao.encerrarEleicao();
-            tela.mostrarRelatorios(servicoVotacao.gerarRelatorios(), "Relatório final da eleição");
-            tela.mostrarMensagem("Votação encerrada.");
+            tela.mostrarApuracao(servicoVotacao.gerarRelatorios());
+            return;
         }
         tela.mostrarCargo(cargoAtual());
     }

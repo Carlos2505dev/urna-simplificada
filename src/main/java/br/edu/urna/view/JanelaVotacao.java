@@ -133,8 +133,8 @@ public class JanelaVotacao extends JFrame implements TelaVotacao {
         content.add(createDisplayPanel(), BorderLayout.CENTER);
         content.add(createKeypadPanel(), BorderLayout.EAST);
         setContentPane(content);
-        somTecla = carregarSom("teclas.wav", -8.0f);
-        somFim = carregarSom("fim.wav", -4.0f);
+        somTecla = carregarSom("resources/audios/teclas.wav", -8.0f);
+        somFim = carregarSom("resources/audios/fim.wav", -4.0f);
         renderizar();
         pack();
         setResizable(false);
@@ -259,6 +259,16 @@ public class JanelaVotacao extends JFrame implements TelaVotacao {
     @Override
     public void mostrarRelatorios(List<RelatorioEleitoral> relatorios, String titulo) {
         DialogoRelatorio.mostrar(this, titulo, relatorios);
+    }
+
+    @Override
+    public void mostrarApuracao(List<RelatorioEleitoral> relatorios) {
+        if (temporizadorFim != null) {
+            temporizadorFim.stop();
+        }
+        dispose();
+        ApuracaoEleitoral apuracao = new ApuracaoEleitoral(relatorios);
+        apuracao.setVisible(true);
     }
 
     private void voltarParaProximoEleitor() {

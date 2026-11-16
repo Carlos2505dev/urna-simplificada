@@ -35,4 +35,6 @@ public interface TelaVotacao {
     void mostrarMensagem(String mensagem);
 
     void mostrarRelatorios(List<RelatorioEleitoral> relatorios, String titulo);
+
+    void mostrarApuracao(List<RelatorioEleitoral> relatorios);
 }
